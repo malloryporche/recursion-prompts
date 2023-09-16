@@ -25,16 +25,11 @@ let factorial = function(n) {
 // sum([1,2,3,4,5,6]); // 21
 let sum = function(array) {
   // declare result var
-  var result = 0;
-
-  if (!Array.isArray(array)) {
-    return result += array;
+  if (array.length === 0) {
+    return 0;
+  } else {
+    return array[0] + sum(array.slice(1));
   }
-  array.forEach(function(item) {
-    result += sum(item);
-  });
-  //return result var
-  return result;
 };
 
 // 3. Sum all numbers in an array containing nested arrays.

@@ -82,13 +82,22 @@ let sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 let range = function(x, y) {
-  var result = [];
-
-  if (x === y) {
-    return result;
+  //Edge cases
+  if ((x === y) || (y - x === 1) || (x - y === 1)) {
+    return [];
+  } else if (y - x === 2) {
+    return [x + 1];
   }
 
-  return result.push(range(x+1));
+  else if ( x < y) {
+    var list = range(x, y - 1);
+    list.push(y - 1);
+    return list;
+  } else {
+    var list = range(x-1, y);
+    list.unshift(x-1);
+    return list;
+  }
 
 };
 

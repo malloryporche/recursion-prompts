@@ -82,12 +82,13 @@ let sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 let range = function(x, y) {
+  var result = [];
 
-if (x === y) {
-  return [];
-}
+  if (x === y) {
+    return result;
+  }
 
-return []
+  return result.push(range(x+1));
 
 };
 
@@ -116,6 +117,15 @@ let exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 let powerOfTwo = function(n) {
+
+  if (n === 0) {
+    return false;
+  }
+  if (n === 1) {
+    return true;
+  }
+
+  return n = powerOfTwo(n/2);
 };
 
 // 9. Write a function that reverses a string.

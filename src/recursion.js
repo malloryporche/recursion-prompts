@@ -18,13 +18,11 @@ let factorial = function(n) {
 
   return n * factorial(n-1);
 
-  return result;
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 let sum = function(array) {
-  // declare result var
   if (array.length === 0) {
     return 0;
   } else {
@@ -52,17 +50,39 @@ let arraySum = function(array) {
 // isEven(2) // true
 // isEven(9) // false
 let isEven = function(n) {
+  n = Math.abs(n);
+
+  if (n === 0) {
+    return true;
+  } else if (n === 1) {
+    return false;
+  } else {
+    return isEven(n-2);
+  }
+
 };
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 let sumBelow = function(n) {
+
+
 };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 let range = function(x, y) {
+  // declare result arr
+  var result = [];
+
+  if ( x === y ) {
+    return result;
+  }
+
+
+
+
 };
 
 // 7. Compute the exponent of a number.
